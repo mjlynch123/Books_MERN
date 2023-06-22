@@ -37,3 +37,17 @@ export const GET_ALL_USERS = gql`
     }
   }
 `;
+
+export const GET_BOOKS = gql`
+  query GetBooks {
+    books {
+      _id
+      authors
+      description
+      title
+      bookId
+      image
+      link
+    }
+  }
+`;
