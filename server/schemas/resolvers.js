@@ -16,6 +16,19 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
+    // Retreiving all users in the database ** Added for testing **
+    users: async () => {
+      // Retrieve users from the database
+      const users = await User.find(); // Replace with your actual implementation
+
+      // If no users are found, return an empty array instead of null
+      if (!users) {
+        return [];
+      }
+
+      return users;
+    },
   },
   Mutation: {
     login: async (parent, { email, password }) => {
